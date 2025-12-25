@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONYKS Solutions - FAQ Guide</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* FAQ Section Specific Styles - Updated for your Theme */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--bg-primary);
+            margin-top: 10px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header h1 {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--text-brown);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--accent-darker);
+        }
+
+        .faq-question h3 {
+            font-size: 1.15rem;
+            color: var(--bg-cream);
+            margin: 0;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-icon {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
+        }
+
+        /* Active State CSS */
+        .faq-item.active {
+            border-color: var(--accent-gold);
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--accent-darker);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--bg-cream);
+        }
+
+        /* Answer Content Styling - Matching your Theme */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            background-color: #FDFBF9; /* Very light cream for contrast */
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 2000px;
+            padding: 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-brown);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            padding-left: 1.2rem;
+            color: var(--text-brown);
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer strong {
+            color: var(--accent-darker);
+        }
+
+        /* Category Buttons Styling */
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            color: var(--text-brown);
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: var(--accent-darker);
+            color: white;
+            border-color: var(--bg-cream);
+        }
+
+   .tax-guide-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #5C4A42 0%, #3D2E27 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tax-guide-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(90deg,#3D2E27 100%,  #5C4A42 0%);
+}
+
+.tax-guide-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+
+
+<body>
+
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="images/Company logo.jpeg" alt="ONYKS Solutions">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="guide.html">Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ <section class="faq-section">
+    <div class="faq-container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find professional answers to your legal and business queries.</p>
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-filter="all">All Questions</button>
+            <button class="category-btn" data-filter="structure">Business Structures</button>
+            <button class="category-btn" data-filter="registration">Registration</button>
+            <button class="category-btn" data-filter="services">Our Services</button>
+        </div>
+
+        <div class="faq-list">
+            
+            <div class="faq-item" data-category="structure">
+                <div class="faq-question">
+                    <h3>I want to start a business but don't know the structure. Can you explain?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>There are basically the following types of business structures in Pakistan: Sole Proprietorships, Partnerships, Limited Liability Partnerships (LLP) and Limited Companies. Each differs in taxes, liability, and control.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="structure">
+                <div class="faq-question">
+                    <h3>What is a Sole Proprietorship & how to register?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>A business run by an individual. No separate legal entity; the owner takes all profits/losses and has unlimited liability. Taxes are paid via personal returns.</p>
+                    <strong>Registration Steps:</strong>
+                    <ol>
+                        <li>Choose a name and make a letterhead/business card.</li>
+                        <li>Take CNIC and letterhead to a bank for a business account.</li>
+                        <li>Apply for NTN/GST at FBR (Requires rent agreement & utility bill).</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="structure">
+                <div class="faq-question">
+                    <h3>What is a Partnership (Firm / Form C)?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Works like a sole proprietorship but with multiple individuals. Requires a partnership agreement on legal stamp paper. Partners have unlimited liability, meaning if one is sued, all are liable.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="structure">
+                <div class="faq-question">
+                    <h3>What is a Company (Private/Public Limited)?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>A separate legal entity owned by shareholders. Offers limited liability protection. Requires more paperwork (Board of Directors, Auditor, Legal Advisor) but is highly transparent.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="structure">
+                <div class="faq-question">
+                    <h3>How much tax will I have to pay?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Tax depends on your business structure. We have put together a comprehensive guide along with tax rates.</p>
+                    <a href="./taxation-pakistan.html" class="tax-guide-link">
+                        See Free Tax Guide 
+                    </a>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="registration">
+                <div class="faq-question">
+                    <h3>How can I search company names in Pakistan?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Use the tool available on our Search page (courtesy SECP) to check existing Private Limited names. Note: Currently, there is no online search for Sole Proprietorship or Partnership names.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="services">
+                <div class="faq-question">
+                    <h3>What is EOBI & Social Security? Are they same?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>EOBI:</strong> Pension/Old-age benefits. Mandatory for 5+ employees (5% employer, 1% employee contribution).</p>
+                    <p><strong>Social Security:</strong> Health/Workplace insurance (6% employer contribution). Both are mandatory under Pakistani law.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="services">
+                <div class="faq-question">
+                    <h3>Why should I apply for a Trademark or Copyright?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To prevent others from stealing your brand identity or creative work. It acts as legal notice of your ownership and allows you to sue for misuse.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="services">
+                <div class="faq-question">
+                    <h3>How do you bill and where is your office?</h3>
+                    <i class="fas fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Billing:</strong> 50% advance, 50% on delivery (Cash or Cheque).</p>
+                    <p><strong>Office:</strong> A-044 Lakhani Pride One, Block 13, Gulistan-e-Johar, Karachi. We are open 24 hours.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <!-- Footer -->
+    <footer class="footer-full">
+        <div class="footer-inner">
+            <div class="row g-4">
+
+   <!-- Column 1 -->
+<div class="col-lg-4 col-md-6">
+    <img src="./images/footer logo.png" alt="ONYKS Solutions" class="footer-logo mb-3">
+    <p>
+      We help you register your business in Pakistan and provide expert assistance in filing, taxation, audits, and intellectual property matters.
+    </p>
+
+    <div class="social-links mt-3">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>        <!-- Column 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="guide.html">Guide</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-4">
+                    <h5>Contact Info</h5>
+
+                    <div class="footer-contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+92-333-0388313</span>
+                    </div>
+
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@onykssolutions.com</span>
+                    </div>
+
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Office No 215, Sea Breeze Plaza, Main Shahra-e-Faisal, Karachi</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom text-center" style="margin-top: 50px;">
+                <p class="mb-0">© 2024 ONYKS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const parent = q.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Category Filter Logic
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
